@@ -4,4 +4,7 @@
     <string name="num_1">num1</string>
     <string name="num_2">num2</string>
     <string name="calc_button">Plus_Result</string>
+    <string name="number_null">Number is null. please retry again.</string>
+    <string name="number_exception">Number is too long or wrong. please retry again</string>
+    <string name="big_exception">Sum Result is too Big9000 or wrong. please retry again</string>
 </resources>
