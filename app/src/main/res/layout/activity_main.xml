@@ -1,56 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:id="@+id/mainLayout"
+    <data>
+
+        <variable
+            name="main"
+            type="kr.co.everspin.hellondk.MainActivity" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-        <EditText
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="center"
-            android:hint="@string/num_1"
-            android:inputType="number"
-            android:maxLength="10"
-            android:minWidth="60sp"
-            tools:ignore="Autofill" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/num_1"
+                android:inputType="number"
+                android:maxLength="10"
+                android:minWidth="60sp"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginRight="20sp"
+                android:text="@string/plus_text" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/num_2"
+                android:inputType="number"
+                android:maxLength="10"
+                android:minWidth="60sp"
+                tools:ignore="Autofill" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginLeft="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginRight="20sp"
-            android:text="@string/plus_text" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="@string/num_2"
-            android:inputType="number"
-            android:maxLength="10"
-            android:minWidth="60sp"
-            tools:ignore="Autofill" />
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mainLayout"
-        android:layout_marginStart="10sp"
-        android:layout_marginLeft="10sp"
-        android:layout_marginEnd="10sp"
-        android:layout_marginRight="10sp"
-        android:text="@string/calc_button"
-        android:textAllCaps="false" />
-</RelativeLayout>
+            android:layout_below="@id/mainLayout"
+            android:layout_marginStart="10sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
+            android:onClick="@{main::onPlusResultButtonClicked}"
+            android:text="@string/calc_button"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+</layout>
